@@ -92,6 +92,8 @@ Social Support, Freedom to Make Life Choices, and GDP per capita were consistent
 - The best-performing model overall was **XGBoost** for standard regression, and **LSTM** for time-aware prediction.
 - Enabled simulations of “what-if” scenarios (e.g., increased GDP, improved social support, freedom).
 
+![611E349F-9DF7-4A59-9106-56EAD51C8EA4_1_105_c](https://github.com/user-attachments/assets/f006abd3-b9fe-4591-9e76-2d1047d9dccc)
+
 ## Models Compared
 
 | Indicator Change         | XGBoost Prediction | LSTM Prediction |
