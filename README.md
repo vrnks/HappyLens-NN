@@ -129,6 +129,6 @@ Open the notebooks in Jupyter:
 ## Inspiration
 
 This project aims to go beyond generic happiness rankings by making the findings interpretable and relevant to policy and individual-level planning.
-	"There is no universal formula for happiness — but there can be a data-driven guide to help find your 	own."
+	***"There is no universal formula for happiness — but there can be a data-driven guide to help find your own."***
 
 
