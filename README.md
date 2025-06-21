@@ -51,7 +51,11 @@ HappyLens_NN/
 - **Exploratory Data Analysis (EDA)**: PCA, correlation matrix, visual summaries.
 - **Clustering**: KMeans-based grouping of countries by happiness-related features.
 - **Prediction Models**:
-  - Traditional regressors: Linear Regression, Random Forest, Gradient Boosting, XGBoost.
+  - Traditional regressors:
+    - Linear Regression,
+    - Random Forest,
+    - Gradient Boosting,
+    - XGBoost.
   - Neural approaches:
     - Feedforward Neural Networks (Keras) — multiple variants with dropout, feature engineering, and regularization.
     - LSTM (Recurrent Neural Network) — models temporal sequences of happiness data across years.
@@ -113,8 +117,10 @@ pip install -r requirements.txt
 Open the notebooks in Jupyter:
 
 - `data_analysis/data_analysis.ipynb`: Explore global patterns and clustering.
-- `model_what_if/happiness_predictor.ipynb`: Train and evaluate predictive models.
-
+- `model_what_if/happiness_predictor.ipynb`: Trains and evaluates baseline ML models — Linear Regression, Random Forest, XGBoost — and analyzes feature importance.
+- `model_what_if/happiness_predictor_nn.ipynb`: Builds and evaluates the LSTM model and runs what-if scenario simulations.
+- `model_what_if/model_comparing.ipynb`: Compares XGBoost and LSTM models to assess time-aware vs. standard predictions.
+- `model_what_if/model_choosing.ipynb`: Builds and tunes neural networks and LSTM models for time-aware prediction. Identifies the best-performing model for scenario analysis.
 
 ## Inspiration
 
