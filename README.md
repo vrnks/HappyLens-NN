@@ -80,6 +80,8 @@ HappyLens_NN/
 - Why the score changed the way it did
 - Which variables had the strongest impact
 - What trade-offs or hidden effects might emerge
+  
+![5B530865-55C1-4B23-A9F7-08AAB2ED1E3C](https://github.com/user-attachments/assets/00d6cc93-4811-436d-87a0-2f51fafe2a42)
 
 ## Results
 
