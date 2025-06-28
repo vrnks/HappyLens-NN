@@ -113,7 +113,7 @@ Using Generative AI, each scenario was accompanied by an automatically generated
 You can explore the dashboard either by:
 
 * Opening the hosted app via this link:		[HappyLens NN](https://happylens-nn.streamlit.app)
--- On the page, you can:
+- - On the page, you can:
 1. Adjust socio-economic indicators for Ukraine in 2024.
 2. View predictions from both XGBoost and LSTM models.
 3. Generate GenAI-powered explanations for the predicted outcomes.
