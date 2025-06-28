@@ -47,7 +47,7 @@ HappyLens_NN/
 
 ## Features
 
-- **Exploratory Data Analysis (EDA)**: PCA, correlation matrix, visual summaries.
+- **Exploratory Data Analysis (EDA)**: Correlation matrix, visual summaries.
 - **Prediction Models**:
   - Traditional regressors:
     - Linear Regression,
@@ -58,7 +58,7 @@ HappyLens_NN/
     - Feedforward Neural Networks (Keras) — multiple variants with dropout, feature engineering, and regularization.
     - LSTM (Recurrent Neural Network) — models temporal sequences of happiness data across years.
 - **Scenario Simulation**: Predict how score changes with hypothetical improvements.
-- **Feature Engineering**: Removal of irrelevant features. Standardization via StandardScaler. PCA applied before clustering.
+- **Feature Engineering**: Removal of irrelevant features. Standardization via StandardScaler.
 
 
 ## Tech Stack
