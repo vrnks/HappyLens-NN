@@ -108,6 +108,21 @@ Using Generative AI, each scenario was accompanied by an automatically generated
                          
 ## How to Use
 
+### Streamlit Dashboard (Recommended)
+
+You can explore the dashboard either by:
+
+* Opening the hosted app via this link:
+
+[HappyLens NN](https://happylens-nn.streamlit.app)
+
+* Or running it locally from code:
+
+```bash
+cd HappyLens-NN/dashboard
+streamlit run app.py
+```
+
 ### Install Requirements
 
 ```bash
