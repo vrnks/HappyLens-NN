@@ -40,6 +40,8 @@ HappyLens_NN/
 │ ├── model_comparing.ipynb         # Comparing XGBoost and LSTM
 │ ├── xgb_scenarios.json            # What-if scenario results using XGBoost model
 │ └── lstm_scenarios.json           # What-if scenario results using LSTM model
+├── dashboard/                      # Streamlit dashboard code
+│   └── app.py
 ├── README.md
 ├── requirements.txt                # Python dependencies
 ```
