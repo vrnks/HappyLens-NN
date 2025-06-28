@@ -67,11 +67,12 @@ HappyLens_NN/
 
 - **Language**: Python 3.11
 - **Jupyter Notebook** for analysis and modeling
+- **Interface**: Streamlit
 - **Data**: World Happiness Report 2024
 - **ML Libraries**: `scikit-learn`, `xgboost`, `keras`, `tensorflow`
 - **Visualization**: `matplotlib`, `seaborn`, `plotly`
 - **Data Handling**: `pandas`, `numpy`, `json`
-- OpenAI (for explanation generation via GenAI)
+- **OpenAI** (for explanation generation via GenAI)
 
 
 ## What GenAI Does Here:
