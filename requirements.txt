@@ -10,3 +10,4 @@ seaborn
 tensorflow
 xgboost
 streamlit
+python-dotenv
