@@ -113,14 +113,6 @@ Using Generative AI, each scenario was accompanied by an automatically generated
 You can explore the dashboard either by:
 
 * Opening the hosted app via this link:		[HappyLens NN](https://happylens-nn.streamlit.app)
-- - On the page, you can:
-1. Adjust socio-economic indicators for Ukraine in 2024.
-2. View predictions from both XGBoost and LSTM models.
-3. Generate GenAI-powered explanations for the predicted outcomes.
-4. Compare multiple scenarios visually and numerically.
-5. See how your simulated inputs differ from actual 2024 data.
-6. Explore XGBoost feature importance interactively.
-
 
 * Or running it locally from code:
 
@@ -128,6 +120,13 @@ You can explore the dashboard either by:
 cd HappyLens-NN/dashboard
 streamlit run app.py
 ```
+
+1. Adjust socio-economic indicators for Ukraine in 2024.
+2. View predictions from both XGBoost and LSTM models.
+3. Generate GenAI-powered explanations for the predicted outcomes.
+4. Compare multiple scenarios visually and numerically.
+5. See how your simulated inputs differ from actual 2024 data.
+6. Explore XGBoost feature importance interactively.
 
 ### Install Requirements
 
