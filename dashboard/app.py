@@ -7,6 +7,7 @@ from keras.models import load_model
 from openai import OpenAI
 import matplotlib.pyplot as plt
 import os   
+import matplotlib.pyplot as plt
 from dotenv import load_dotenv
 
 load_dotenv()  
@@ -68,6 +69,7 @@ st.markdown("### 🔎 Model Predictions for Ukraine (2024):")
 st.success(f"**XGBoost Prediction:** {xgb_pred:.2f}")
 st.info(f"**LSTM Prediction:** {lstm_pred:.2f}")
 
+
 # === GenAI Explanation ===
 
 client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
@@ -110,53 +112,83 @@ if st.button("🧠 Generate Explanation from GenAI"):
         st.markdown(f"**🧠 Analytical Comment:**\n\n{explanation}")
 
 
+# === Session scenario storage initialization ===
+if 'scenarios' not in st.session_state:
+    st.session_state.scenarios = []
+
+# Button to add current scenario
+if st.button("💾 Add Scenario for Comparison"):
+    new_scenario = {
+        'GDP': gdp,
+        'Social Support': support,
+        'Life Expectancy': life_expectancy,
+        'Freedom': freedom,
+        'Generosity': generosity,
+        'Corruption': corruption,
+        'XGBoost Prediction': xgb_pred,
+        'LSTM Prediction': lstm_pred
+    }
+    
+    if len(st.session_state.scenarios) >= 3:
+        st.session_state.scenarios.pop(0)
+    st.session_state.scenarios.append(new_scenario)
+    st.success("Scenario added!")
+
 indicators = ['GDP', 'Social Support', 'Life Expectancy', 'Freedom', 'Generosity', 'Corruption']
 values = [gdp, support, life_expectancy, freedom, generosity, corruption]
 
-# === Happiness trend plot ===
-st.markdown("### 📉 Happiness Score Trend for Ukraine (2020–2024)")
 
-# Get actual values (2020–2024)
-happiness_trend = df[(df["Country"] == "Ukraine") & (df["Year"].between(2020, 2024))][["Year", "HappinessScore"]]
-happiness_trend = happiness_trend.sort_values("Year")
+actual_happiness_2024 = 4.68
 
-# Extract real 2024 value
-real_2024 = happiness_trend[happiness_trend["Year"] == 2024]["HappinessScore"].values[0]
+if st.session_state.scenarios:
+    st.markdown("### 📋 Saved Scenarios for Comparison")
+    df_scenarios = pd.DataFrame(st.session_state.scenarios)
+    st.dataframe(df_scenarios.style.format("{:.2f}"))
 
-# Build plot
-fig, ax = plt.subplots(figsize=(7, 4))
+    fig, ax = plt.subplots(figsize=(7, 4))
+    indices = list(range(1, len(df_scenarios) + 1))
+    
+    ax.plot(indices, df_scenarios['XGBoost Prediction'], 'o-', label="XGBoost Prediction", color='orange')
+    ax.plot(indices, df_scenarios['LSTM Prediction'], 's-', label="LSTM Prediction", color='green')
 
-# Line: actual values
-ax.plot(happiness_trend["Year"], happiness_trend["HappinessScore"], marker='o', label="📌 Real Score", color="black")
+    ax.axhline(y=actual_happiness_2024, color='red', linestyle='--', label='Actual 2024 Value')
 
-# XGBoost prediction
-ax.plot(2024, xgb_pred, marker='D', markersize=7, label="🤖 XGBoost Prediction", color="orange")
+    ax.set_xticks(indices)
+    ax.set_xticklabels([f"Scenario {i}" for i in indices])
+    ax.set_ylabel("Predicted Happiness Score")
+    ax.set_title("Comparison of Predictions by Scenario")
+    ax.grid(True)
+    ax.legend()
+    st.pyplot(fig)
 
-# LSTM prediction
-ax.plot(2024, lstm_pred, marker='s', markersize=7, label="🧠 LSTM Prediction", color="green")
-
-# Decorations
-ax.set_xticks([2020, 2021, 2022, 2023, 2024])
-ax.set_ylabel("Happiness Score")
-ax.set_title("Happiness Score in Ukraine (2020–2024)")
-ax.grid(True)
-ax.legend()
-
-st.pyplot(fig)
 
 # === Historical comparison ===
-st.markdown("### 📈 Comparison with Previous Years (Ukraine)")
+st.markdown("### 📈 Comparison between Real 2024 Values and User Inputs (Ukraine)")
 
-hist_years = [2022, 2023]
-hist_df = df[(df["Country"] == "Ukraine") & (df["Year"].isin(hist_years))]
-hist_means = hist_df[['GDP', 'SocialSupport', 'LifeExpectancy', 'Freedom', 'Generosity', 'Corruption']].mean()
+real_2024 = df[(df["Country"] == "Ukraine") & (df["Year"] == 2024)][
+    ['GDP', 'SocialSupport', 'LifeExpectancy', 'Freedom', 'Generosity', 'Corruption']
+].iloc[0]
 
+# Create a DataFrame to compare real 2024 values and user inputs
 df_compare = pd.DataFrame({
-    "2022–2023 Avg": hist_means,
-    "2024 Input": pd.Series(values, index=indicators)
+    "Real 2024 Values": real_2024,
+    "Input Values": pd.Series(values, index=indicators)
 })
 
 st.dataframe(df_compare.style.format("{:.2f}"))
+
+
+def plot_feature_importance(model):
+    fig, ax = plt.subplots(figsize=(8,5))
+    xgb.plot_importance(model, ax=ax, max_num_features=10, importance_type='gain', show_values=False)
+    plt.title("Feature Importance (Gain) - XGBoost")
+    plt.tight_layout()
+    return fig
+
+st.markdown("### 🔑 Feature Importance (XGBoost)")
+
+fig_imp = plot_feature_importance(xgb_model)
+st.pyplot(fig_imp)
 
 st.markdown("---")
 st.caption("👁‍🗨 This tool uses socio-economic inputs to simulate the predicted happiness score for Ukraine in 2024 based on two AI models.")
