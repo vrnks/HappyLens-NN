@@ -9,3 +9,4 @@ scikit-learn
 seaborn
 tensorflow
 xgboost
+streamlit
