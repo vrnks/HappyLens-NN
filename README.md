@@ -10,7 +10,6 @@
 
 - Understand global happiness trends using historical data.
 - Explore and visualize factors influencing happiness across the world.
-- Cluster countries based on key well-being indicators.
 - Build regression models (including simple neural nets) to predict national happiness scores.
 - Simulate “what-if” scenarios to explore how changes in factors influence outcomes.
 - Identify the most impactful drivers of national well-being.
@@ -33,7 +32,7 @@ HappyLens_NN/
 │ ├── happiness_data.csv            # Cleaned and processed dataset
 │ └── data_preprocessing.ipynb      # Notebook for data cleaning and transformation
 ├── data_analysis/                  
-│ └── data_analysis.ipynb           # EDA, visualizations, clustering analysis
+│ └── data_analysis.ipynb           # EDA, visualizations
 ├── model_what_if/                  # Predictive models and what-if simulations
 │ ├── happiness_predictor.ipynb     # Builds and evaluates ML models (linear, RF, XGBoost)
 │ ├── happiness_predictor_nn.ipynb  # LSTM model and what-if simulations
@@ -49,7 +48,6 @@ HappyLens_NN/
 ## Features
 
 - **Exploratory Data Analysis (EDA)**: PCA, correlation matrix, visual summaries.
-- **Clustering**: KMeans-based grouping of countries by happiness-related features.
 - **Prediction Models**:
   - Traditional regressors:
     - Linear Regression,
@@ -85,14 +83,11 @@ HappyLens_NN/
 
 ## Results
 
-- Clustered countries into 3 groups based on well-being metrics.
 - Ukraine's 2024 happiness score was predicted.
 - Feature importance analysis across models revealed that:
 Social Support, Freedom to Make Life Choices, and GDP per capita were consistently top predictors. However, freedom and support showed stronger marginal effects on predicted happiness in what-if simulations than raw GDP growth.
 - The best-performing model overall was **XGBoost** for standard regression, and **LSTM** for time-aware prediction.
 - Enabled simulations of “what-if” scenarios (e.g., increased GDP, improved social support, freedom).
-
-![611E349F-9DF7-4A59-9106-56EAD51C8EA4_1_105_c](https://github.com/user-attachments/assets/f006abd3-b9fe-4591-9e76-2d1047d9dccc)
 
 ## Models Compared
 
@@ -120,7 +115,7 @@ pip install -r requirements.txt
 
 Open the notebooks in Jupyter:
 
-- `data_analysis/data_analysis.ipynb`: Explore global patterns and clustering.
+- `data_analysis/data_analysis.ipynb`: Explore global patterns.
 - `model_what_if/happiness_predictor.ipynb`: Trains and evaluates baseline ML models — Linear Regression, Random Forest, XGBoost — and analyzes feature importance.
 - `model_what_if/happiness_predictor_nn.ipynb`: Builds and evaluates the LSTM model and runs what-if scenario simulations.
 - `model_what_if/model_comparing.ipynb`: Compares XGBoost and LSTM models to assess time-aware vs. standard predictions.
