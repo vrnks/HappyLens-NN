@@ -25,7 +25,7 @@ df = pd.read_csv(os.path.join(BASE_DIR, "..", "data", "happiness_data.csv"))
 features = ['Year', 'GDP', 'SocialSupport', 'LifeExpectancy', 'Freedom', 'Generosity', 'Corruption']
 
 st.set_page_config(page_title="HappyLens-NN", layout="centered")
-st.title("📊 HappyLens-NN — Ukraine 2024 Scenario Modeling")
+st.title("📊 HappyLens-NN - Ukraine 2024 Scenario Modeling")
 
 st.markdown("Enter Ukraine’s socio-economic indicators for 2024:")
 
