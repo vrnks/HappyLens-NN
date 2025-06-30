@@ -48,7 +48,7 @@ with col_left:
     X_lstm_scaled = scaler.transform(X_lstm.reshape(-1, len(features))).reshape(1, 3, len(features))
     lstm_pred = lstm_model.predict(X_lstm_scaled, verbose=0)[0][0]
 
-    st.markdown("### 🔎 Model Predictions for Ukraine (2024):")
+    st.markdown("### 🔎 Model Predictions of Happiness Score for Ukraine (2024):")
     st.success(f"**XGBoost Prediction:** {xgb_pred:.2f}")
     st.info(f"**LSTM Prediction:** {lstm_pred:.2f}")
 
