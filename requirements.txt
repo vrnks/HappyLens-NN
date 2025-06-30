@@ -11,3 +11,5 @@ tensorflow
 xgboost
 streamlit
 python-dotenv
+joblib
+ipython
