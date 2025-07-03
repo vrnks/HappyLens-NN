@@ -57,8 +57,8 @@ HappyLens_NN/
     - Gradient Boosting,
     - XGBoost.
   - Neural approaches:
-    - Feedforward Neural Networks (Keras) — multiple variants with dropout, feature engineering, and regularization.
-    - LSTM (Recurrent Neural Network) — models temporal sequences of happiness data across years.
+    - Feedforward Neural Networks (Keras) - multiple variants with dropout, feature engineering, and regularization.
+    - LSTM (Recurrent Neural Network) - models temporal sequences of happiness data across years.
 - **Scenario Simulation**: Predict how score changes with hypothetical improvements.
 - **Feature Engineering**: Removal of irrelevant features. Standardization via StandardScaler.
 
@@ -139,7 +139,7 @@ pip install -r requirements.txt
 Open the notebooks in Jupyter:
 
 - `data_analysis/data_analysis.ipynb`: Explore global patterns.
-- `model_what_if/happiness_predictor.ipynb`: Trains and evaluates baseline ML models — Linear Regression, Random Forest, XGBoost — and analyzes feature importance.
+- `model_what_if/happiness_predictor.ipynb`: Trains and evaluates baseline ML models - Linear Regression, Random Forest, XGBoost - and analyzes feature importance.
 - `model_what_if/happiness_predictor_nn.ipynb`: Builds and evaluates the LSTM model and runs what-if scenario simulations.
 - `model_what_if/model_comparing.ipynb`: Compares XGBoost and LSTM models to assess time-aware vs. standard predictions.
 - `model_what_if/model_choosing.ipynb`: Builds and tunes neural networks and LSTM models for time-aware prediction. Identifies the best-performing model for scenario analysis.
@@ -147,6 +147,6 @@ Open the notebooks in Jupyter:
 ## Inspiration
 
 This project aims to go beyond generic happiness rankings by making the findings interpretable and relevant to policy and individual-level planning.
-	***"There is no universal formula for happiness — but there can be a data-driven guide to help find your own."***
+	***"There is no universal formula for happiness - but there can be a data-driven guide to help find your own."***
 
 
