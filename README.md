@@ -21,7 +21,7 @@
 - **Rows:** 1,956  
 - **Columns:** 10 (including year, country, happiness score, and 6 predictors)  
 - **Countries:** ~140  
-- **Years covered:** 2011–2024  
+- **Years covered:** 2011-2024  
 
 ## Project Structure
 
