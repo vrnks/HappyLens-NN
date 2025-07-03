@@ -3,7 +3,7 @@
 
 ## Project Overview
 
-**HappyLens NN** is a data science project exploring happiness levels across countries through statistical analysis, machine learning, and predictive scenario modeling. Using real data from the World Happiness Report, it combines exploratory analysis, model building (Random Forest, Gradient Boosting, XGBoost, Neural Network, LSTM) to forecast happiness scores based on socio-economic indicators, and scenario-based simulations. The focus is on modeling Ukraine’s happiness score for 2024 — and exploring how changes in key factors like GDP, Social Support, and Freedom would affect the outcome.
+**HappyLens NN** is a data science project exploring happiness levels across countries through statistical analysis, machine learning, and predictive scenario modeling. Using real data from the World Happiness Report, it combines exploratory analysis, model building (Random Forest, Gradient Boosting, XGBoost, Neural Network, LSTM) to forecast happiness scores based on socio-economic indicators, and scenario-based simulations. The focus is on modeling Ukraine’s happiness score for 2024 - and exploring how changes in key factors like GDP, Social Support, and Freedom would affect the outcome.
 
 
 ## Objectives
